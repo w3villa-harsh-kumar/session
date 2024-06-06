@@ -23,14 +23,8 @@ if st.button("Send"):
         st.session_state.chat_history.append(f"You: {user_input}")
         st.session_state.chat_history.append(f"Doctor Bot: {response}")
         
-        # Display conversation
-        # st.text_area("Conversation", value="\n".join(st.session_state.chat_history), height=300, key="conversation")
     else:
         st.warning("Please enter a message.")
-
-# if st.button("Clear Chat"):
-#     st.session_state.chat_history = []
-#     st.success("Chat history cleared!")
 
 # Display the conversation history
 st.text_area("Conversation", value="\n".join(st.session_state.chat_history), height=300, key="conversation_history")
