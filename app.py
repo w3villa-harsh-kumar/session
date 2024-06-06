@@ -1,6 +1,11 @@
 import streamlit as st
 from chatbot.chatbot import Chatbot
 
+st.set_page_config(
+    page_title="Multi-Persona Chatbot",
+    page_icon="🤖"  # Robot emoji as favicon
+)
+
 # Initialize the chatbot
 chatbot = Chatbot()
 
