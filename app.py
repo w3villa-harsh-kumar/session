@@ -2,7 +2,12 @@ import streamlit as st
 from chatbot.chatbot import Chatbot
 from chatbot.persona import personas
 
-# Initialize session state for chat history and selected persona if not already initialized
+st.set_page_config(
+    page_title="Multi-Persona Chatbot",
+    page_icon="🤖"  # Robot emoji as favicon
+)
+
+# Initialize session state for chat history if not already initialized
 if 'chat_history' not in st.session_state:
     st.session_state.chat_history = []
 
