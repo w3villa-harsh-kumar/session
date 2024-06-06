@@ -1,15 +1,14 @@
-# chatbot/chatbot.py
 import openai
 from dotenv import load_dotenv
 import os
-from .persona import doctor_persona
+from .persona import personas
 
 load_dotenv()  # Load environment variables from .env file
 
 class Chatbot:
-    def __init__(self):
+    def __init__(self, persona):
         openai.api_key = os.getenv("OPENAI_API_KEY")
-        self.memory = [doctor_persona]
+        self.memory = [persona]
 
     def generate_response(self, user_input):
         self.memory.append({"role": "user", "content": user_input})
